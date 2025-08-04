@@ -38,3 +38,20 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // Sélectionne tous les éléments de la FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    // Pour chaque élément de la FAQ...
+    faqItems.forEach(item => {
+        // ...on sélectionne l'en-tête (la question)
+        const question = item.querySelector('h3');
+
+        // On écoute le clic sur la question
+        question.addEventListener('click', () => {
+            // On bascule la classe 'active' pour afficher/masquer la réponse
+            item.classList.toggle('active');
+        });
+    });
+});
+
